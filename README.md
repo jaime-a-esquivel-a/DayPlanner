@@ -4,7 +4,7 @@
 
 ##### This planner will help you to schedule your activities during office hours 9AM-5PM.
 
-- Saved activities will be stored in localstorage. so you can refresh/close page and still recover your activities
+- Saved activities will be stored in local storage. So you can refresh/close page and still recover your activities.
 - You´ll find in the title the current date, weekday and hour.
 - According to the current hour the time blocks will either be:
     - Color gray: time block is in the past.
