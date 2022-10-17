@@ -1,9 +1,12 @@
 
+//working hours array.
 var dayWrkHrs = ['9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm'];
+//Interval to set timer on screen
 var appInterval = setInterval(updateTimeBar, 1000);
 
 printTimeBlocks();
 
+//Retrieve info from localstorage abd print timeblocks in screen
 function printTimeBlocks(){
 
     var lstored;
@@ -56,6 +59,7 @@ function printTimeBlocks(){
 
 }
 
+//Determine Past,Present,Future for timeblocks according to actual time
 function timeOfBlock(lphour){
 
     var hour = moment().hours();
@@ -72,12 +76,14 @@ function timeOfBlock(lphour){
 
 }
 
+//Timer in screen
 function updateTimeBar(){
 
     $('#currentHour').html(moment().format('LTS'));
 
 }
 
+//When user clicks save button of the timeblock save it in localstorage, substitute any other info stored previously for the timblock
 function saveEvent(lphour){
 
     var lclDayEvents = [];
@@ -107,18 +113,5 @@ function saveEvent(lphour){
     localStorage.setItem('lclDayEvents', JSON.stringify(lclDayEvents));
     
 }
-
-function getEvent(lphour){
-    
-    var lclDayEvents = [];
-
-    if ( localStorage.getItem('lclDayEvents') != undefined ){
-
-        lclDayEvents = JSON.parse(localStorage.getItem('lclDayEvents'));
-
-    }
-
-}
-
 
 
